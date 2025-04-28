@@ -1,5 +1,6 @@
 
 import { signIn, signOut, auth } from "@/auth";
+import { Button } from "./ui/button";
 
 export default async function HandleSign() {
     const session = await auth();
@@ -16,8 +17,8 @@ export default async function HandleSign() {
     }
 
     return user ?     
-        <button onClick={handleSignOut} className="bg-red-500 text-white p-2 rounded shadow-md hover:bg-red-700" type="submit">Sign Out</button> 
+        <Button onClick={handleSignOut} className="bg-red-500 text-white p-2 rounded shadow-md hover:bg-red-700" type="submit">Sign Out</Button>
         :
-        <button onClick={handleSignIn} className="bg-blue-500 text-white p-2 rounded shadow-md hover:bg-blue-700" type="submit">Sign In</button>
+        <Button onClick={handleSignIn} className="bg-blue-500 text-white p-2 rounded shadow-md hover:bg-blue-700" type="submit">Sign In</Button>
 
 } 
